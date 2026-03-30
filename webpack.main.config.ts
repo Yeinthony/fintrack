@@ -1,3 +1,5 @@
+import * as path from "path"
+
 import type { Configuration } from 'webpack';
 
 import { rules } from './webpack.rules';
@@ -16,5 +18,9 @@ export const mainConfig: Configuration = {
   plugins,
   resolve: {
     extensions: ['.js', '.ts', '.jsx', '.tsx', '.css', '.json'],
+    alias: {
+      "@main": path.resolve(__dirname, "src/main"),
+      "@shared": path.resolve(__dirname, "src/shared"),
+    },
   },
 };

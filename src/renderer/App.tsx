@@ -1,9 +1,15 @@
-import React from 'react';
+import { Route, Routes } from "react-router";
+import { DashboardPage } from "@renderer/features/dashboard/DashboardPage";
+import { Layout } from "@renderer/components/Layout";
+
 
 export default function App() {
   return (
-    <div className='bg-amber-500'>
-      <h1 className='text-white'>Hola mundo!</h1>
-    </div>
+    <Routes>
+      <Route element={<Layout />}>                                                                                  
+        <Route path="/" element={<DashboardPage />} />                                                                  
+        {/* Aquí van tus futuras rutas */}
+      </Route>                                                                       
+    </Routes>  
   );
 }
